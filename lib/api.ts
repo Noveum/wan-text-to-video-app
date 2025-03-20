@@ -228,8 +228,7 @@ export const LORA_OPTIONS = [
 
 export const RESOLUTION_OPTIONS = [
   { label: "480p", value: "480p" },
-  { label: "720p", value: "720p" },
-  { label: "1080p", value: "1080p" },
+  { label: "720p", value: "720p" }
 ]
 
 export const ASPECT_RATIO_OPTIONS = [
