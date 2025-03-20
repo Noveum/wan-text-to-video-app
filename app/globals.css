@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 220 14% 14%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 25%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 220 14% 10%;
+    --foreground: 0 0% 98%;
+    --card: 220 14% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 14% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 213 94% 68%;
+
+    /* Sidebar variables */
+    --sidebar-background: 220 14% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for better UI appearance */
+.sidebar-nav {
+  @apply transition-all duration-200;
+}
+
+.form-control-with-border {
+  @apply border border-input rounded-md transition-all duration-200;
+}
+
+.form-label {
+  @apply font-medium text-sm;
+}
+
+.theme-card {
+  @apply border border-border bg-card text-card-foreground shadow-sm rounded-lg;
+}
+
+/* Ensure inputs have proper borders */
+input,
+select,
+textarea {
+  @apply border-input;
+}
+
+/* Make sure dark mode has proper contrast for inputs */
+.dark input,
+.dark select,
+.dark textarea {
+  @apply bg-muted border-input;
+}
+
+/* Ensure cards have proper styling */
+.card {
+  @apply border border-border rounded-lg overflow-hidden;
+}
+
+/* Make buttons have proper borders */
+.btn {
+  @apply border border-input;
+}
+
+/* Enhance hover states */
+.hover-state {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* API.market branding colors */
+.api-market-blue {
+  @apply text-primary;
+}
+
+.api-market-dark {
+  @apply text-[#1e2329];
+}
+
+/* Improved light mode styles */
+.light .card,
+.light .form-control,
+.light .button {
+  @apply shadow-sm;
+}
+
+.light .sidebar {
+  @apply border-r border-border;
+}
+
+.light .card-header {
+  @apply bg-background border-b border-border;
+}
+
+.light .tabs-list {
+  @apply bg-muted/50;
+}
+
+/* Cost badge styles */
+.cost-badge {
+  @apply inline-flex items-center rounded-full px-2 py-1 text-xs font-medium;
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+}
+
+/* Dark mode specific styles for better contrast */
+.dark a.text-primary {
+  color: hsl(213, 94%, 68%);
+}
+.dark a.text-primary:hover {
+  color: white;
+}
+
+.dark .badge-primary {
+  @apply bg-primary/20 text-white border-primary/30;
+}
+
+.dark .progress-bar {
+  @apply bg-primary;
+}
+
+.dark .button-primary {
+  @apply bg-primary hover:bg-primary/90 text-white;
+}
+
+.dark .text-link {
+  color: hsl(213, 94%, 68%);
+}
+.dark .text-link:hover {
+  @apply text-white underline;
+}
+
+.dark .icon-primary {
+  color: hsl(213, 94%, 68%);
+}
+
